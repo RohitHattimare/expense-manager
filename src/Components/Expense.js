@@ -1,20 +1,20 @@
 import ExpenseItem from "./Expense/ExpenseItem";
+import Card from "./Expense/Card";
 import './Expense.css';
 
 const Expense = (props) => {
     console.log("Inside Expense");
-    // console.log(props.items);
-    // const item1 = props.items[0];
-    // const item2 = props.items[1];
-    // const item3 = props.items[2];
-    // const item4 = props.items[3];
+
 
     return (
-        <div className="expenses" >
-            <ExpenseItem item={props.items[0]} />
+
+        <Card className="expenses" >
+            {props.items.map((item) => <ExpenseItem key={item.id} item={item} />)}
+
+            {/* <ExpenseItem item={props.items[0]} />
             <ExpenseItem item={props.items[1]} />
             <ExpenseItem item={props.items[2]} />
-            <ExpenseItem item={props.items[3]} />
+            <ExpenseItem item={props.items[3]} /> */}
 
             {/* <ExpenseItem
                 title={item1.title}
@@ -41,7 +41,7 @@ const Expense = (props) => {
                 id={item4.id}
                 date={item4.date}
             /> */}
-        </div>
+        </Card>
     )
 }
 
