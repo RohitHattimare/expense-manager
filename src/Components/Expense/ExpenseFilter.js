@@ -1,12 +1,16 @@
 import './ExpenseFilter.css';
 
-const ExpenseFilter = () => {
+const ExpenseFilter = (probs) => {
+
+    const yearChangeHandler = (event) => {
+        probs.onYearFilter(event.target.value);
+    }
 
     return (
         <div className='expenses-filter '>
             <div className='expense-filter__control'>
-                <label htmlFor="year">Choose a year:</label>
-                <select name="year" id="year">
+                <label>Filter by Year</label>
+                <select onChange={yearChangeHandler} value={probs.selectedYear}>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
                     <option value="2021">2021</option>

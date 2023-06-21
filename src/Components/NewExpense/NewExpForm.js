@@ -24,7 +24,8 @@ const NewExpForm = (props) => {
     }
     const setPriceHandler = (event) => {
         setNewData((prevState) => {
-            return { ...prevState, price: event.target.value }
+            console.log(event.target.value);
+            return { ...prevState, price: Number(event.target.value) }
         })
     }
 
@@ -33,33 +34,41 @@ const NewExpForm = (props) => {
         const newExpenseData = {
             title: newData.title,
             date: newData.date,
-            price: newData.price
+            amount: newData.price
         }
-        props.onAddExpense(newExpenseData);
+
+        //To check the data is empty or not
+        if (newExpenseData.amount === 0 || newExpenseData.title === "" || newExpenseData.date === "") {
+            alert("Please fill the form");
+            return;
+        }
+        else
+            props.onAddExpense(newExpenseData);
         setNewData({
             title: "",
             date: "",
-            price: ""
+            amount: ""
         });
     }
     return (
         <form className="newExpense_form" onSubmit={formSubmitHandler}>
             <div className="expenses-filter__control">
-                <div className="expenses-filter">
-                    <label htmlFor="title">Title </label>
-                    <input type="text" onChange={setTitleHandler} name="title" value={newData.title} />
+                <div className="expenses-filter_form">
+                    <label>Title </label>
+                    <input type="text" required onChange={setTitleHandler} name="title" value={newData.title} />
                 </div>
-                <div className="expenses-filter">
+                <div className="expenses-filter_form">
                     <label >Price </label>
-                    <input type="number" min='0' step='1' name="price" onChange={setPriceHandler} value={newData.price} />
+                    <input type="number" required min='0' step='1' name="price" onChange={setPriceHandler} value={newData.price} />
                 </div>
-                <div className="expenses-filter">
+                <div className="expenses-filter_form">
                     <label >Date </label>
-                    <input type="date" name="date" min="2019-02-14" max="2023-10-04" onChange={setDateHandler} value={newData.date} />
+                    <input type="date" req name="date" min="2019-02-14" max="2023-10-04" onChange={setDateHandler} value={newData.date} />
                 </div>
             </div>
-            <div className="newExpense_action"></div>
-            <button type="submit" className="btn" >New Expense</button>
+            <div className="newExpense_action">
+                <button type="submit" className="btn" >New Expense</button>
+            </div>
         </form>
     )
 }

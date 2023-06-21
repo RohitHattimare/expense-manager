@@ -1,23 +1,24 @@
+import { useState } from 'react';
 import './App.css';
 import Expense from './Components/Expense';
-import ExpenseFilter from './Components/Expense/ExpenseFilter';
 import NewExpense from './Components/NewExpense/NewExpense';
 import { items } from './Components/data';
 
 
 function App() {
-
+  const [expences, setExpenses] = useState(items);
 
   const onAddExpense = (newData) => {
-    console.log("inside App :", newData);
+    setExpenses(prevExpenses => {
+      return [newData, ...prevExpenses,]
+    });
   }
 
   return (
     <div className="App">
       <h1>Expense Tracker</h1>
       <NewExpense onAddExpense={onAddExpense}></NewExpense>
-      <ExpenseFilter />
-      <Expense items={items} />
+      <Expense items={expences} />
     </div >
   );
 }

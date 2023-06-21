@@ -3,11 +3,6 @@ import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 
 const ExpenseItem = ({ item: { date, title, amount } }) => {
-    // console.log('id ', id);
-
-    // const date = new Date(item.date);
-    // const title = item.title;
-    // const amount = item.amount;
     return (
         <div className="expense-item">
             <ExpenseDate date={date} />
