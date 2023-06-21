@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import "./NewExpForm.css"
-const NewExpForm = () => {
+const NewExpForm = (props) => {
     // const [newTitle, setNewTitle] = useState("");
     // const [newDate, setNewDate] = useState("");
     // const [newPrice, setNewPrice] = useState("");
@@ -35,27 +35,27 @@ const NewExpForm = () => {
             date: newData.date,
             price: newData.price
         }
+        props.onAddExpense(newExpenseData);
         setNewData({
             title: "",
             date: "",
             price: ""
         });
-        console.log(newExpenseData);
     }
     return (
         <form className="newExpense_form" onSubmit={formSubmitHandler}>
             <div className="expenses-filter__control">
                 <div className="expenses-filter">
-                    <label for="title">Title </label>
+                    <label htmlFor="title">Title </label>
                     <input type="text" onChange={setTitleHandler} name="title" value={newData.title} />
                 </div>
                 <div className="expenses-filter">
-                    <label for="Price">Price </label>
+                    <label >Price </label>
                     <input type="number" min='0' step='1' name="price" onChange={setPriceHandler} value={newData.price} />
                 </div>
                 <div className="expenses-filter">
-                    <label for="Date">Date </label>
-                    <input type="date" name="date" min="2023-02-14" max="2023-10-04" onChange={setDateHandler} value={newData.date} />
+                    <label >Date </label>
+                    <input type="date" name="date" min="2019-02-14" max="2023-10-04" onChange={setDateHandler} value={newData.date} />
                 </div>
             </div>
             <div className="newExpense_action"></div>

@@ -1,37 +1,24 @@
 import './App.css';
 import Expense from './Components/Expense';
+import ExpenseFilter from './Components/Expense/ExpenseFilter';
 import NewExpense from './Components/NewExpense/NewExpense';
+import { items } from './Components/data';
 
 
 function App() {
-  const items = [
-    {
-      id: 'e1',
-      title: 'Toilet Paper',
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-    },
-    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
-    {
-      id: 'e3',
-      title: 'Car Insurance',
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: 'e4',
-      title: 'New Desk (Wooden)',
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
-  ];
+
+
+  const onAddExpense = (newData) => {
+    console.log("inside App :", newData);
+  }
 
   return (
     <div className="App">
       <h1>Expense Tracker</h1>
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={onAddExpense}></NewExpense>
+      <ExpenseFilter />
       <Expense items={items} />
-    </div>
+    </div >
   );
 }
 

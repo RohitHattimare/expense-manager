@@ -3,9 +3,6 @@ import Card from "./Expense/Card";
 import './Expense.css';
 
 const Expense = (props) => {
-    console.log("Inside Expense");
-
-
     return (
 
         <Card className="expenses" >
