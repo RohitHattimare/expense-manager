@@ -35,6 +35,11 @@ const NewExpForm = () => {
             date: newData.date,
             price: newData.price
         }
+        setNewData({
+            title: "",
+            date: "",
+            price: ""
+        });
         console.log(newExpenseData);
     }
     return (
@@ -42,15 +47,15 @@ const NewExpForm = () => {
             <div className="expenses-filter__control">
                 <div className="expenses-filter">
                     <label for="title">Title </label>
-                    <input type="text" onChange={setTitleHandler} name="title" />
+                    <input type="text" onChange={setTitleHandler} name="title" value={newData.title} />
                 </div>
                 <div className="expenses-filter">
                     <label for="Price">Price </label>
-                    <input type="number" min='0' step='10' name="price" onChange={setPriceHandler} />
+                    <input type="number" min='0' step='1' name="price" onChange={setPriceHandler} value={newData.price} />
                 </div>
                 <div className="expenses-filter">
                     <label for="Date">Date </label>
-                    <input type="date" name="date" min="2023-02-14" max="2023-10-04" onChange={setDateHandler} />
+                    <input type="date" name="date" min="2023-02-14" max="2023-10-04" onChange={setDateHandler} value={newData.date} />
                 </div>
             </div>
             <div className="newExpense_action"></div>
