@@ -1,0 +1,20 @@
+.new-expense_wrapper{
+background-color: #34414f;
+    padding: 0.2rem;
+    margin: 1rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(170, 177, 240, 0.25);
+}
+
+.new-expense_wrapper button{
+    background-color: rgb(165, 157, 152);
+    font: inherit;
+    padding: 0.5rem 3rem;
+    margin:0.5rem 0rem;
+    font-weight: bold;
+    border-radius: 6px;
+    
+}

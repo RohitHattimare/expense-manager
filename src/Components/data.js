@@ -13,9 +13,14 @@ export const items = [
         date: new Date(2021, 2, 28),
     },
     {
-        id: 'e4',
-        title: 'New Desk (Wooden)',
-        amount: 450,
-        date: new Date(2021, 5, 12),
+        id: 'e5',
+        title: 'PS5',
+        amount: 35000,
+        date: new Date(2023, 7, 12),
+    }, {
+        id: 'e6',
+        title: 'Samsung Galaxy S24 Ultra',
+        amount: 120000,
+        date: new Date(2023, 2, 5),
     },
 ];

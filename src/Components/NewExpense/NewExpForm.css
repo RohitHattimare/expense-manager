@@ -6,7 +6,6 @@
 .newExpense_form{
     background-color: #a892ee;
     padding: 1rem;
-    margin: 2rem auto;
     width: 50rem;
     max-width: 95%;
     border-radius: 12px;
@@ -24,6 +23,7 @@
 
 .expenses-filter_form label {
     font-weight: bold;
+    border-radius: 6px;
     margin-bottom: 0.5rem;  
 }
 
@@ -33,6 +33,13 @@
     font-weight: bold;
     border-radius: 6px;
 }
+
+.newExpense_action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .newExpense_action button{
     background-color: rgb(148, 141, 137);
     font: inherit;

@@ -32,7 +32,7 @@ const NewExpForm = (props) => {
         const newExpenseData = {
             title: newData.title,
             date: new Date(newData.date),
-            amount: newData.amount
+            amount: Number(newData.amount)
         }
 
         //To check the data is empty or not
@@ -65,9 +65,10 @@ const NewExpForm = (props) => {
                 </div>
             </div>
             <div className="newExpense_action">
+                <button type="button" onClick={props.onChangeVisibility}>Cancel</button>
                 <button type="submit" className="btn" >New Expense</button>
             </div>
-        </form>
+        </form >
     )
 }
 
