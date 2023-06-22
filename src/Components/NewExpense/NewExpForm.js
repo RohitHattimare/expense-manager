@@ -53,15 +53,34 @@ const NewExpForm = (props) => {
             <div className="expenses-filter__control">
                 <div className="expenses-filter_form">
                     <label>Title </label>
-                    <input type="text" required onChange={setTitleHandler} name="title" value={newData.title} />
+                    <input
+                        type="text"
+                        required
+                        onChange={setTitleHandler}
+                        name="title"
+                        value={newData.title} />
                 </div>
                 <div className="expenses-filter_form">
                     <label >Price </label>
-                    <input type="number" required min='0' step='1' name="price" onChange={setPriceHandler} value={newData.amount} />
+                    <input
+                        type="number"
+                        required min='0'
+                        step='1'
+                        name="price"
+                        onChange={setPriceHandler}
+                        value={newData.amount} 
+                        />
                 </div>
                 <div className="expenses-filter_form">
                     <label >Date </label>
-                    <input type="date" requiredname="date" min="2019-02-14" max="2023-10-04" onChange={setDateHandler} value={newData.date} />
+                    <input
+                        type="date"
+                        required
+                        name="date"
+                        min="2019-02-14"
+                        max="2023-10-04"
+                        onChange={setDateHandler}
+                        value={newData.date} />
                 </div>
             </div>
             <div className="newExpense_action">

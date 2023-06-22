@@ -1,6 +1,8 @@
 .new-expense_wrapper{
-background-color: #34414f;
-    padding: 0.2rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: #4a5f75;
+    padding: 0.5rem;
     margin: 1rem auto;
     width: 50rem;
     max-width: 95%;
@@ -11,10 +13,17 @@ background-color: #34414f;
 
 .new-expense_wrapper button{
     background-color: rgb(165, 157, 152);
+    color: rgb(255, 255, 251);
     font: inherit;
     padding: 0.5rem 3rem;
     margin:0.5rem 0rem;
     font-weight: bold;
     border-radius: 6px;
     
+}
+
+.new-expense_wrapper button:hover{
+    transform: translateY(-2px);
+    transition: transform 0.2s;
+    box-shadow: 0 2px 30px rgba(183, 168, 184, 0.767);
 }
