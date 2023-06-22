@@ -9,7 +9,7 @@ const NewExpForm = (props) => {
     const [newData, setNewData] = useState({
         title: "",
         date: "",
-        price: ""
+        amount: ""
     });
 
     const setTitleHandler = (event) => {
@@ -24,17 +24,15 @@ const NewExpForm = (props) => {
     }
     const setPriceHandler = (event) => {
         setNewData((prevState) => {
-            console.log(event.target.value);
-            return { ...prevState, price: Number(event.target.value) }
+            return { ...prevState, amount: event.target.value }
         })
     }
-
     const formSubmitHandler = (e) => {
         e.preventDefault();
         const newExpenseData = {
             title: newData.title,
-            date: newData.date,
-            amount: newData.price
+            date: new Date(newData.date),
+            amount: newData.amount
         }
 
         //To check the data is empty or not
@@ -59,11 +57,11 @@ const NewExpForm = (props) => {
                 </div>
                 <div className="expenses-filter_form">
                     <label >Price </label>
-                    <input type="number" required min='0' step='1' name="price" onChange={setPriceHandler} value={newData.price} />
+                    <input type="number" required min='0' step='1' name="price" onChange={setPriceHandler} value={newData.amount} />
                 </div>
                 <div className="expenses-filter_form">
                     <label >Date </label>
-                    <input type="date" req name="date" min="2019-02-14" max="2023-10-04" onChange={setDateHandler} value={newData.date} />
+                    <input type="date" requiredname="date" min="2019-02-14" max="2023-10-04" onChange={setDateHandler} value={newData.date} />
                 </div>
             </div>
             <div className="newExpense_action">

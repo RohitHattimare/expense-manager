@@ -9,46 +9,20 @@ const Expense = (props) => {
     function yearChnageFilter(year) {
         setSelectedYear(year);
     }
+    //Filtered Expenses array using slected year
+    const filteredExpenses = props.items.filter(expense => {
+        return (expense.date.getFullYear().toString() === selectedYear)
+    })
+    // console.log("expenses", filteredExpenses);
 
     return (
         <Card className="expenses" >
             <ExpenseFilter onYearFilter={yearChnageFilter} selectedYear={selectedYear} />
-            {props.items.map((item) => <ExpenseItem key={item.id} item={item} />)}
-
-            {/* <ExpenseItem item={props.items[0]} />
-            <ExpenseItem item={props.items[1]} />
-            <ExpenseItem item={props.items[2]} />
-            <ExpenseItem item={props.items[3]} /> */}
-            {/* <ExpenseItem
-                title={item1.title}
-                amount={item1.amount}
-                id={item1.id}
-                date={item1.date}
-            />
-            <ExpenseItem
-                title={item2.title}
-                amount={item2.amount}
-                id={item2.id}
-                date={item2.date}
-            />
-            <ExpenseItem
-                title={item3.title}
-                amount={item3.amount}
-                id={item3.id}
-                date={item3.date}
-            />
-            <ExpenseItem
-                title={item4.title}
-                amount={item4.amount}
-                id={item4.id}
-                date={item4.date}
-            /> */}
+            {filteredExpenses.length === 0 ? (
+                <h2>No Expense Found</h2>) : (
+                filteredExpenses.map((item) => <ExpenseItem key={item.id} item={item} />)
+            )}
         </Card>
     )
 }
-
-
-
-
-
 export default Expense;
