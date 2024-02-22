@@ -9,7 +9,7 @@ const ExpenseFilter = (probs) => {
     return (
         <div className='expenses-filter '>
             <div className='expense-filter__control'>
-                <label>Filter by Year</label>
+                <label>Filter by Year  </label>
                 <select onChange={yearChangeHandler} value={probs.selectedYear}>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>

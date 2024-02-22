@@ -2,19 +2,20 @@
     color: rgb(205, 35, 35);
     padding: 0 0.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     /* align-items: center; */
     padding: 0.5rem;
     margin: 1rem 0;
     background-color: #db5252;
 }
 
-.expenses-filter__control {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1rem 0;
+.expense-filter__control select{
+    background-color: rgb(174, 167, 163);
+    font: inherit;
+    padding: 0.1rem 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 0.5rem 0;
 }
 
 .expenses-filter label {
